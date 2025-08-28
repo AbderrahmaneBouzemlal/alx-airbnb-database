@@ -2,7 +2,7 @@
 
 ## 🗃️ Database Design
 
-<img width="1621" height="1051" alt="Untitled Diagram" src="https://github.com/user-attachments/assets/74fdd21f-37b4-4aa8-ba3c-2d40b04019ce" />
+<img style="color: white" width="1621" height="1051" alt="Untitled Diagram" src="https://github.com/user-attachments/assets/74fdd21f-37b4-4aa8-ba3c-2d40b04019ce" />
 
 
 The database schema supports all core Airbnb-like features, including user management, property listings, bookings, payments, and reviews. Below are the key entities, their fields, and how they relate to one another.
