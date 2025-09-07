@@ -12,4 +12,4 @@ SELECT property_id
  	FROM booking 
  	group by user_id
  	) as sub 
- where COUNT_booking > 3;
+ WHERE COUNT_booking > 3;
