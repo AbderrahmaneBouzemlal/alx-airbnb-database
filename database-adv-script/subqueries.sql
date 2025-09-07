@@ -6,10 +6,10 @@ SELECT property_id
  ) AS sub
  WHERE average_rating > 4.0;
 
- select user_id 
- from (
- 	select count(booking_id) as count_booking, user_id 
- 	from booking 
+ SELECT user_id 
+ FROM (
+ 	SELECT count(booking_id) as count_booking, user_id 
+ 	FROM booking 
  	group by user_id
  	) as sub 
  where count_booking > 3;

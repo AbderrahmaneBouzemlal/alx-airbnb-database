@@ -23,7 +23,7 @@ Properties are hosted by John Doe (host_id: 123e4567-e89b-12d3-a456-426614174000
 Both created around 11:00 on 2025-08-31.
 
 ## 3. **Bookings** (3 records inserted)
-Bookings link guests to properties, capturing historical price per night (from property at booking time). Statuses include confirmed and pending. Assumes nights calculated as (end_date - start_date).
+Bookings link guests to properties, capturing historical price per night (FROM property at booking time). Statuses include confirmed and pending. Assumes nights calculated as (end_date - start_date).
 
 - **Booking 1**: Jane Smith books Cozy Apartment (booking_id: 323e4567-e89b-12d3-a456-426614174000)
   - Dates: 2025-09-01 to 2025-09-05 (4 nights, computed total: $400.00)
@@ -61,9 +61,9 @@ Reviews are post-stay feedback for properties, with ratings (1-5) and comments.
 ## 6. **Messages** (3 records inserted)
 Messages simulate communication between guests and hosts.
 
-- **Message 1**: From Jane Smith to John Doe (message_id: 623e4567-e89b-12d3-a456-426614174000)
+- **Message 1**: FROM Jane Smith to John Doe (message_id: 623e4567-e89b-12d3-a456-426614174000)
   - Body: "Is the apartment available for September?" (sent: 2025-08-30 15:00)
-- **Message 2**: From John Doe to Jane Smith (message_id: 623e4567-e89b-12d3-a456-426614174001)
+- **Message 2**: FROM John Doe to Jane Smith (message_id: 623e4567-e89b-12d3-a456-426614174001)
   - Body: "Yes, it is available." (sent: 2025-08-30 15:05)
-- **Message 3**: From Alice Johnson to John Doe (message_id: 623e4567-e89b-12d3-a456-426614174002)
+- **Message 3**: FROM Alice Johnson to John Doe (message_id: 623e4567-e89b-12d3-a456-426614174002)
   - Body: "What amenities does the beach house have?" (sent: 2025-08-30 15:10)

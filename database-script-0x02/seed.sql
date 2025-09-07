@@ -4,7 +4,7 @@
 -- Insert Users
 INSERT INTO "user" (user_id The task is to write SQL INSERT statements to add sample data for the AirBnB database tables: User, Property, Booking, etc.
 
-The schema is the updated one from the previous message, in 3NF.
+The schema is the updated one FROM the previous message, in 3NF.
 
 Tables:
 
@@ -22,7 +22,7 @@ Tables:
 
 I need to insert sample data that reflects real-world usage: multiple users, bookings, payments.
 
-Since user_id, etc., are UUIDs, I need to generate sample UUIDs. In SQL, I can use uuid_generate_v4() but since this is PostgreSQL (from the schema, it uses CREATE TYPE, etc.), I'll assume we have uuid-ossp extension or just hardcode UUID strings.
+Since user_id, etc., are UUIDs, I need to generate sample UUIDs. In SQL, I can use uuid_generate_v4() but since this is PostgreSQL (FROM the schema, it uses CREATE TYPE, etc.), I'll assume we have uuid-ossp extension or just hardcode UUID strings.
 
 The schema uses UUID, so I'll hardcode some UUID values for simplicity.
 
@@ -46,9 +46,9 @@ Plan sample data:
 
 - Bookings: By guests for properties.
 
-  - Booking1: Guest1 books Property1 from 2025-09-01 to 2025-09-05, price_per_night 100, status confirmed
+  - Booking1: Guest1 books Property1 FROM 2025-09-01 to 2025-09-05, price_per_night 100, status confirmed
 
-  - Booking2: Guest2 books Property2 from 2025-09-10 to 2025-09-12, price_per_night 150, status pending
+  - Booking2: Guest2 books Property2 FROM 2025-09-10 to 2025-09-12, price_per_night 150, status pending
 
 - Payments: For bookings.
 
@@ -66,7 +66,7 @@ For real-world, a booking might have one or more payments.
 
 - Messages: Between users.
 
-  - Message from Guest1 to Host1: Inquiry about Property1
+  - Message FROM Guest1 to Host1: Inquiry about Property1
 
 Current date is August 31, 2025, so dates in future or past accordingly.
 

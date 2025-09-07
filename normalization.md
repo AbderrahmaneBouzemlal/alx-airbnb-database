@@ -3,7 +3,7 @@
 ### Redundancy in Booking Table - total_price:
 
 The total_price is likely a calculated value: total_price = (end_date - start_date) * pricepernight (assuming nights are calculated as end_date - start_date, or +1 depending on business rules; the exact formula isn't specified but is deterministic).
-Storing total_price introduces redundancy because it can be derived from other attributes (start_date, end_date) and the pricepernight from the Property table.
+Storing total_price introduces redundancy because it can be derived FROM other attributes (start_date, end_date) and the pricepernight FROM the Property table.
 This creates a risk of inconsistencies (e.g., if dates are updated without recalculating total_price).
 
 
@@ -15,10 +15,10 @@ However, it violates 3NF in the Booking table due to a transitive dependency.
 Functional Dependencies (FDs):
 
 booking_id → (property_id, start_date, end_date, total_price, ...)
-Implicitly (from domain knowledge): (property_id, start_date, end_date) → total_price (since total_price is determined by the property's pricepernight and the booking duration).
+Implicitly (FROM domain knowledge): (property_id, start_date, end_date) → total_price (since total_price is determined by the property's pricepernight and the booking duration).
 
 
-Here, total_price depends on non-key attributes (property_id, start_date, end_date) transitively via pricepernight (from another table).
+Here, total_price depends on non-key attributes (property_id, start_date, end_date) transitively via pricepernight (FROM another table).
 In 3NF, every non-prime attribute must depend directly on the primary key, not transitively on other non-key attributes. This FD violates that: (property_id, start_date, end_date) is not a superkey, and total_price is not prime.
 
 
@@ -45,7 +45,7 @@ This eliminates the transitive dependency and redundancy, as the value is derive
 Add Historical Price Field to Booking:
 
 Introduce price_per_night DECIMAL NOT NULL to the Booking table.
-This field captures the pricepernight from the Property table at the time of booking.
+This field captures the pricepernight FROM the Property table at the time of booking.
 Reason: Prevents issues with price changes in Property affecting historical bookings. When creating a booking, the application copies property.pricepernight to booking.price_per_night.
 Now, computations use booking.price_per_night, avoiding joins and ensuring historical accuracy.
 No new FDs are introduced that violate 3NF, as price_per_night directly depends on booking_id (it's a snapshot for that booking).
