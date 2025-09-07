@@ -8,8 +8,8 @@ SELECT property_id
 
  SELECT user_id 
  FROM (
- 	SELECT count(booking_id) as count_booking, user_id 
+ 	SELECT COUNT(booking_id) as COUNT_booking, user_id 
  	FROM booking 
  	group by user_id
  	) as sub 
- where count_booking > 3;
+ where COUNT_booking > 3;
