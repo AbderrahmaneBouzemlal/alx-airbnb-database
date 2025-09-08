@@ -41,6 +41,7 @@ JOIN user u ON b.user_id = u.user_id
 JOIN property p ON b.property_id = p.property_id
 LEFT JOIN payment pay 
        ON pay.booking_id = b.booking_id
+WHERE pay.amount > 3 AND status LIKE "confirmed"
 ORDER BY b.created_at DESC;
 
 -- Step 3: Recommended Indexes
