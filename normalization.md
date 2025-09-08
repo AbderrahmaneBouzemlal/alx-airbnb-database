@@ -22,7 +22,7 @@ Here, total_price depends on non-key attributes (property_id, start_date, end_da
 In 3NF, every non-prime attribute must depend directly on the primary key, not transitively on other non-key attributes. This FD violates that: (property_id, start_date, end_date) is not a superkey, and total_price is not prime.
 
 
-Additionally, joining with Property for calculations risks using updated pricepernight values for historical bookings, leading to inaccuracies if prices change over time.
+Additionally, JOINing with Property for calculations risks using updated pricepernight values for historical bookings, leading to inaccuracies if prices change over time.
 
 
 #### Other Potential Concerns (Not Normalization Violations):
@@ -47,7 +47,7 @@ Add Historical Price Field to Booking:
 Introduce price_per_night DECIMAL NOT NULL to the Booking table.
 This field captures the pricepernight FROM the Property table at the time of booking.
 Reason: Prevents issues with price changes in Property affecting historical bookings. When creating a booking, the application copies property.pricepernight to booking.price_per_night.
-Now, computations use booking.price_per_night, avoiding joins and ensuring historical accuracy.
+Now, computations use booking.price_per_night, avoiding JOINs and ensuring historical accuracy.
 No new FDs are introduced that violate 3NF, as price_per_night directly depends on booking_id (it's a snapshot for that booking).
 
 
