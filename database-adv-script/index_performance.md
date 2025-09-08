@@ -66,7 +66,10 @@ WHERE b.status = 'confirmed'
   AND p.location = 'New York'
 ORDER BY b.start_date DESC;
 ```
+
 ## using EXPLAIN ANALYZE MYSQL8
+
+
 ```sql
 EXPLAIN ANALYZE
 SELECT * 

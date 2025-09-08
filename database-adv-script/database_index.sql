@@ -20,3 +20,11 @@ CREATE INDEX idx_booking_user_id ON booking(user_id);
 CREATE INDEX idx_booking_status ON booking(status);
 CREATE INDEX idx_booking_start_end_date ON booking(start_date, end_date);
 CREATE INDEX idx_booking_created_at ON booking(created_at);
+
+EXPLAIN ANALYZE
+SELECT * 
+FROM booking b
+JOIN property p ON b.property_id = p.property_id
+WHERE b.status = 'confirmed'
+  AND p.location = 'New York'
+ORDER BY b.start_date DESC;
